@@ -1,0 +1,52 @@
+<html lang="ru">
+<head>
+    <title>Нейро-карточки</title>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/mustache@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="render.js"></script>
+</head>
+<body onload="onload()">
+<div class="cards-list">
+    {{#characters}}
+    <div class="card" style="--color-primary: {{color_primary}}; --color-secondary: {{color_secondary}}" data-card>
+        <div class="card__cover">
+            <img src="{{image}}" class="card__image" alt="" />
+        </div>
+
+        <div class="card__short-description">
+            <h2 class="card__header">{{shot_name}}</h2>
+
+            <p class="card__description">
+                {{description}}
+            </p>
+        </div>
+
+        <div class="card__full-description">
+            <h3 class="card__fullname">{{full_name}}</h3>
+
+            <div class="card__section">
+                <h4 class="card__subheader">История персонажа</h4>
+                {{character_story}}
+            </div>
+
+            <div class="card__section">
+                <h4 class="card__subheader">Оружие</h4>
+                {{weapon}}
+            </div>
+
+            <div class="card__section">
+                <h4 class="card__subheader">Суперспособности</h4>
+                <ul class="card__superpowers">
+                    {{#superpowers}}
+                    <li>{{.}}</li>
+                    {{/superpowers}}
+                </ul>
+            </div>
+        </div>
+    </div>
+    {{/characters}}
+</div>
+</body>
+</html>
