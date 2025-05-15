@@ -28,23 +28,25 @@ body {
     /* обнуляем отступы */
     /* todo рассказать про reset и normalize */
     margin: 0;
-    padding: 0;
+    padding: 120px 80px;
 
     background: var(--color-bg);
     font-family: "Lab Grotesque", sans-serif;
 }
 
-/*.cards-list {*/
-    /*display: flex;*/
+.cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
     /*flex-grow: 1;*/
     /*flex-wrap: nowrap;*/
-    /*gap: 32px;*/
+
     /*overflow: auto;*/
     /*padding: 0 32px;*/
     /*animation: fadeIn 0.2s 0.4s ease both;*/
     /*scroll-snap-type: x mandatory;*/
     /*scrollbar-color: #514327 transparent;*/
-/*}*/
+}
 
 /*.cards-list > * {*/
 /*    scroll-snap-align: center;*/
