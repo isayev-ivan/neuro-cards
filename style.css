@@ -1,9 +1,9 @@
 @import "https://s.kontur.ru/common-v2/fonts/labgrotesque/labgrotesque.css";
 
-/*:root {*/
-/*    --color-primary: #FF0;*/
-/*    --color-secondary: #F0F;*/
-/*}*/
+:root {
+    --color-primary: #222;
+    --color-secondary: #dadada;
+}
 
 body {
     display: flex; /* для выравнивания по центру */
@@ -45,8 +45,10 @@ body {
     /*flex-grow: 1;*/
     /*flex-shrink: 0;*/
     /*flex-basis: 350px;*/
-    /*height: 470px;*/
-    /*margin-bottom: 100px;*/
+
+    width: 400px;
+    height: 470px;
+
     border-radius: 20px;
     background: white;
     color: #222222;
@@ -110,19 +112,24 @@ body {
 /*    flex-basis: 700px;*/
 /*}*/
 
-/*.card__cover {*/
-/*    width: 350px;*/
-/*    height: 160px;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    position: absolute;*/
-/*    border-top-left-radius: inherit;*/
-/*    border-top-right-radius: inherit;*/
-/*    background: var(--color-secondary);*/
-/*    text-align: center;*/
-/*    animation: coverOut 0.2s ease both;*/
-/*}*/
+.card__cover {
+    height: 150px;
+    background: var(--color-secondary);
+
+    /* выравниваем содержимое по центру */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Если сделать у контейнера overflow:hidden, то изображение обрежется,
+       Поэтому нам надо скруглить верхние углы и overflow убрать
+    */
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+
+    /*position: absolute;*/
+    /*animation: coverOut 0.2s ease both;*/
+}
 
 /*.card_active .card__cover {*/
 /*    border-top-right-radius: initial;*/
