@@ -1,8 +1,19 @@
 @import "https://s.kontur.ru/common-v2/fonts/labgrotesque/labgrotesque.css";
 
+/* Сброс стилей */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --color-primary: #222;
     --color-secondary: #dadada;
+
+    --color-text: #222;
+    --color-bg: #b1a793;
+    --color-card-bg: white;
 }
 
 body {
@@ -15,10 +26,11 @@ body {
     /*flex-direction: column;*/
 
     /* обнуляем отступы */
+    /* todo рассказать про reset и normalize */
     margin: 0;
     padding: 0;
 
-    background: #b1a793;
+    background: var(--color-bg);
     font-family: "Lab Grotesque", sans-serif;
 }
 
@@ -51,7 +63,7 @@ body {
 
     border-radius: 20px;
     background: white;
-    color: #222222;
+    color: var(--color-text);
 
     box-shadow: 0 20px 4px 0 rgba(0, 0, 0, 0.04),
                 0 40px 16px 0 rgba(0, 0, 0, 0.08),
@@ -84,29 +96,28 @@ body {
     user-select: none;
 }
 
-/*.card__header {*/
-/*    margin-bottom: 12px;*/
-/*    color: var(--color-primary);*/
-/*    font-size: 35px;*/
-/*    line-height: 1.3;*/
-/*}*/
-
-/*.card__short-description {*/
-/*    display: none;*/
+.card__short-description-block {
     /*align-self: flex-end;*/
-    /*text-align: center;*/
+    text-align: center;
+    padding: 0 40px;
     /*animation: fadeIn 0.2s 0.15s ease both;*/
-/*}*/
+}
 
-/*.card__description {*/
-/*    margin-top: 0;*/
-/*    margin-bottom: 0;*/
-/*    padding: 0 40px 30px 40px;*/
-/*    font-weight: 300;*/
-/*    font-style: italic;*/
-/*    font-size: 18px;*/
-/*    line-height: 1.19;*/
-/*}*/
+.card__header {
+    color: var(--color-primary);
+    font-size: 40px;
+    line-height: 48px; /* !! todo почему не другие единицы, ответить !! */
+}
+
+.card__description {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 24px;
+}
+.card__header + .card__description {
+    margin-top: 16px;
+}
 
 /*.card_active {*/
 /*    flex-basis: 700px;*/
@@ -126,6 +137,8 @@ body {
     */
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
+
+    margin-bottom: 100px;
 
     /*position: absolute;*/
     /*animation: coverOut 0.2s ease both;*/
@@ -291,3 +304,8 @@ body {
     --color-secondary: #f3ede2;
 }
 
+/*
+  todo задания
+  - Сделать тёмную тему
+  - Реализовать другую версию макетов
+*/
