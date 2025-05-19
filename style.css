@@ -162,21 +162,25 @@ body {
 /*    display: none;*/
 /*}*/
 
-/*.card__full-description {*/
-    /*display: none;*/
+.card__full-description {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+
+    padding: 48px 56px;
+
     /*visibility: hidden;*/
     /*max-width: 0;*/
     /*margin-left: 0;*/
     /*transition: 0.2s ease both;*/
-/*}*/
+}
 
 /*.card_active .card__full-description {*/
 /*    margin-left: 300px;*/
 /*    max-width: 100%;*/
 /*    visibility: visible;*/
 /*    padding: 30px 40px;*/
-/*    font-size: 18px;*/
-/*    line-height: 1.3;*/
+
 /*    transition: 0.2s ease;*/
 /*    animation: fadeIn 0.2s 0.1s ease both;*/
 /*}*/
@@ -185,39 +189,51 @@ body {
 /*    animation: fadeIn 0.2s 0.2s ease both;*/
 /*}*/
 
-/*.card__fullname {*/
-/*    color: var(--color-primary);*/
-/*}*/
+.card__fullname {
+    color: var(--color-primary);
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: bold;
+}
 
-/*.card__section {*/
-/*    margin-bottom: 14px;*/
-/*}*/
+.card__section + .card__section {
+    margin-top: 16px;
+}
 
-/*.card__subheader {*/
-/*    display: inline-block;*/
-/*    margin: 0 0 4px;*/
-/*    padding: 0;*/
-/*}*/
+.card__subheader {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+}
+.card__subheader:after {
+    content: ":";
+}
 
-/*.card__subheader:after {*/
-/*    content: ":";*/
-/*}*/
+.card__superpowers {
+    list-style: none;
 
-/*.card__superpowers {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    list-style: none;*/
-/*}*/
+    font-size: 0;
+    line-height: 0;
 
-/*.card__superpowers li {*/
-/*    display: inline-block;*/
-/*    margin: 0;*/
-/*    padding: 4px 6px;*/
-/*    border-radius: 5px;*/
-/*    background: var(--color-secondary);*/
-/*    color: var(--color-primary);*/
-/*    white-space: nowrap;*/
-/*}*/
+    margin: -4px;
+    padding-top: 8px;
+}
+
+.card__superpowers li {
+    display: inline-block;
+
+    font-size: 18px;
+    line-height: 22px;
+
+    margin: 4px;
+
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    white-space: nowrap;
+}
 
 
 /*@keyframes fadeInLeft {*/
