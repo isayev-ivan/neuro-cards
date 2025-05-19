@@ -20,7 +20,7 @@ body {
     display: flex; /* для выравнивания по центру */
     min-height: 100vh; /* занимаем весь экран */
 
-    justify-content: center; /* выравнивание по  горизонтали */
+    /*justify-content: center; !* выравнивание по  горизонтали *!*/
     align-items: center; /* выравнивание по вертикали */
 
     /*flex-direction: column;*/
@@ -28,18 +28,24 @@ body {
     /* обнуляем отступы */
     /* todo рассказать про reset и normalize */
     margin: 0;
-    padding: 120px 80px;
+    padding: 120px 0;
 
     background: var(--color-bg);
     font-family: "Lab Grotesque", sans-serif;
 }
 
+.card-list-wrapper {
+    margin: 0 auto; /* центрируем по горизонтали блочный элемент */
+}
+
 .cards-list {
     display: flex;
-    flex-direction: column;
-    gap: 120px;
+    flex-wrap: nowrap;
+    /*flex-direction: column;*/
+    gap: 48px;
+    padding: 0 80px;
     /*flex-grow: 1;*/
-    /*flex-wrap: nowrap;*/
+
 
     /*overflow: auto;*/
     /*padding: 0 32px;*/
@@ -57,7 +63,7 @@ body {
     /*display: flex;*/
     /*position: relative;*/
     /*flex-grow: 1;*/
-    /*flex-shrink: 0;*/
+    flex-shrink: 0; /* запретить сжатие */
     /*flex-basis: 350px;*/
 
     width: 400px;
