@@ -20,10 +20,7 @@ body {
     display: flex; /* для выравнивания по центру */
     min-height: 100vh; /* занимаем весь экран */
 
-    /*justify-content: center; !* выравнивание по  горизонтали *!*/
     align-items: center; /* выравнивание по вертикали */
-
-    /*flex-direction: column;*/
 
     /* обнуляем отступы */
     /* todo рассказать про reset и normalize */
@@ -46,9 +43,7 @@ body {
     padding: 0 80px;
     /*flex-grow: 1;*/
 
-
     /*overflow: auto;*/
-    /*padding: 0 32px;*/
     /*animation: fadeIn 0.2s 0.4s ease both;*/
     /*scroll-snap-type: x mandatory;*/
     /*scrollbar-color: #514327 transparent;*/
@@ -80,16 +75,12 @@ body {
     cursor: pointer;
     /*transition: 0.2s ease;*/
 }
-
-
-
-/*.card:hover .card__cover {*/
-/*    filter: brightness(98%) contrast(0.95);*/
-/*}*/
-
-/*.card:active .card__cover {*/
-/*    filter: brightness(90%) contrast(0.9);*/
-/*}*/
+.card:hover .card__cover {
+    filter: brightness(98%) contrast(0.98);
+}
+.card:active .card__cover {
+    filter: brightness(95%) contrast(0.98);
+}
 
 
 
@@ -169,6 +160,7 @@ body {
 
     padding: 48px 56px;
 
+    display: none;
     /*visibility: hidden;*/
     /*max-width: 0;*/
     /*margin-left: 0;*/
