@@ -69,12 +69,6 @@ body {
     cursor: pointer;
     /*transition: 0.2s ease;*/
 }
-.card:hover .card__cover {
-    filter: brightness(98%) contrast(0.98);
-}
-.card:active .card__cover {
-    filter: brightness(95%) contrast(0.98);
-}
 
 .card__wrapper {
     border-radius: 20px;
@@ -86,10 +80,55 @@ body {
     width: 100%;
     height: 100%;
 
+    position: relative;
+
     box-shadow: 0 20px 4px 0 rgba(0, 0, 0, 0.04),
     0 40px 16px 0 rgba(0, 0, 0, 0.08),
     0 80px 48px 0 rgba(0, 0, 0, 0.1);
 }
+.card__wrapper:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 150px;
+    background: var(--color-secondary);
+}
+.card:hover .card__wrapper:after,
+.card:hover .card__image {
+    filter: brightness(98%) contrast(0.98);
+}
+.card:active .card__wrapper:after,
+.card:active .card__image {
+    filter: brightness(95%) contrast(0.98);
+}
+
+/*.card__cover {*/
+/*    height: 150px;*/
+/*    background: var(--color-secondary);*/
+
+/*    !* выравниваем содержимое по центру *!*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+
+/*    margin-bottom: 100px;*/
+
+/*    !*position: absolute;*!*/
+/*    !*animation: coverOut 0.2s ease both;*!*/
+/*}*/
+
+/*.card_active .card__cover {*/
+/*    border-top-right-radius: initial;*/
+/*    border-bottom-left-radius: inherit;*/
+/*    animation: coverIn 0.2s ease both;*/
+/*}*/
+
+/*.card_active .card__short-description {*/
+/*    display: none;*/
+/*}*/
 
 
 
@@ -100,7 +139,7 @@ body {
     max-width: 440px;
     max-height: 560px;
 
-    pointer-events: none;
+    /*pointer-events: none;*/
     user-select: none;
 
     position: absolute;
@@ -113,6 +152,9 @@ body {
     /*align-self: flex-end;*/
     text-align: center;
     padding: 0 40px;
+
+    margin-top: 250px;
+
     /*animation: fadeIn 0.2s 0.15s ease both;*/
 }
 
@@ -136,30 +178,7 @@ body {
 /*    flex-basis: 700px;*/
 /*}*/
 
-.card__cover {
-    height: 150px;
-    background: var(--color-secondary);
 
-    /* выравниваем содержимое по центру */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 100px;
-
-    /*position: absolute;*/
-    /*animation: coverOut 0.2s ease both;*/
-}
-
-/*.card_active .card__cover {*/
-/*    border-top-right-radius: initial;*/
-/*    border-bottom-left-radius: inherit;*/
-/*    animation: coverIn 0.2s ease both;*/
-/*}*/
-
-/*.card_active .card__short-description {*/
-/*    display: none;*/
-/*}*/
 
 .card__full-description {
     font-size: 20px;
