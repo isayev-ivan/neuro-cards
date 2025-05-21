@@ -130,8 +130,6 @@ body {
 /*    display: none;*/
 /*}*/
 
-
-
 .card__image {
     width: 280px;
     height: 356px;
@@ -139,7 +137,7 @@ body {
     max-width: 440px;
     max-height: 560px;
 
-    /*pointer-events: none;*/
+    pointer-events: none;
     user-select: none;
 
     position: absolute;
