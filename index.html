@@ -13,40 +13,45 @@
     <div class="cards-list">
         {{#characters}}
         <div class="card {{className}}" data-card>
-            <div class="card__cover">
-                <img src="{{image}}" class="card__image" alt="" />
-            </div>
 
-            <div class="card__short-description-block">
-                <h2 class="card__header">{{shot_name}}</h2>
+            <!--  обертка, чтобы корректно санимировать card__cover, и не зацепить card__image  -->
+            <div class="card__wrapper">
+                <!-- todo декоративный элемент, подумать как избавиться от него (before) -->
+                <div class="card__cover"></div>
 
-                <p class="card__description">
-                    {{description}}
-                </p>
-            </div>
+                <div class="card__short-description-block">
+                    <h2 class="card__header">{{shot_name}}</h2>
 
-            <div class="card__full-description">
-                <h3 class="card__fullname card__section">{{full_name}}</h3>
-
-                <div class="card__section">
-                    <h4 class="card__subheader">История персонажа</h4>
-                    {{character_story}}
+                    <p class="card__description">
+                        {{description}}
+                    </p>
                 </div>
 
-                <div class="card__section">
-                    <h4 class="card__subheader">Оружие</h4>
-                    {{weapon}}
-                </div>
+                <div class="card__full-description">
+                    <h3 class="card__fullname card__section">{{full_name}}</h3>
 
-                <div class="card__section">
-                    <h4 class="card__subheader">Суперспособности</h4>
-                    <ul class="card__superpowers">
-                        {{#superpowers}}
-                        <li>{{.}}</li>
-                        {{/superpowers}}
-                    </ul>
+                    <div class="card__section">
+                        <h4 class="card__subheader">История персонажа</h4>
+                        {{character_story}}
+                    </div>
+
+                    <div class="card__section">
+                        <h4 class="card__subheader">Оружие</h4>
+                        {{weapon}}
+                    </div>
+
+                    <div class="card__section">
+                        <h4 class="card__subheader">Суперспособности</h4>
+                        <ul class="card__superpowers">
+                            {{#superpowers}}
+                            <li>{{.}}</li>
+                            {{/superpowers}}
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            <img src="{{image}}" class="card__image" alt="" />
         </div>
         {{/characters}}
     </div>
