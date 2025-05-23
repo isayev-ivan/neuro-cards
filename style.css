@@ -59,7 +59,7 @@ body {
     height: 470px;
 
     cursor: pointer;
-    /*transition: 0.2s ease;*/
+    transition: width 0.2s ease;
 }
 
 .card__wrapper {
@@ -145,9 +145,10 @@ body {
 
     margin-top: 250px;
 
-    /*animation: fadeIn 0.2s 0.15s ease both;*/
+    animation: fadeIn 0.4s 0.5s ease both;
 }
 .card_active .card__short-description-block {
+    /* todo Мешает анимации */
     display: none;
 }
 
