@@ -80,9 +80,9 @@ function onload() {
     document.querySelectorAll("[data-card]").forEach((x) => {
         x.addEventListener("click", () => {
             x.classList.toggle("card_active");
-            setTimeout(() => {
-                x.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-            }, 250);
+            // setTimeout(() => {
+            //     x.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+            // }, 250);
         });
     });
 }

@@ -64,8 +64,6 @@ body {
     width: 400px;
     height: 470px;
 
-
-
     cursor: pointer;
     /*transition: 0.2s ease;*/
 }
@@ -85,6 +83,9 @@ body {
     box-shadow: 0 20px 4px 0 rgba(0, 0, 0, 0.04),
     0 40px 16px 0 rgba(0, 0, 0, 0.08),
     0 80px 48px 0 rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    /*transition: 0.2s ease;*/
 }
 .card__wrapper:after {
     content: "";
@@ -104,8 +105,15 @@ body {
 .card:active .card__image {
     filter: brightness(95%) contrast(0.98);
 }
+.card_active .card__wrapper:after {
+    top: 0;
+    left: 0;
 
-/*.card__cover {*/
+    height: 100%;
+    width: 360px;
+}
+
+    /*.card__cover {*/
 /*    height: 150px;*/
 /*    background: var(--color-secondary);*/
 
@@ -145,6 +153,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.card_active .card__image {
+    width: 352px;
+    height: 448px;
+
+    top: 50%;
+    left: 4px;
+    transform: translate(0, -50%);
+}
 
 .card__short-description-block {
     /*align-self: flex-end;*/
@@ -154,6 +170,9 @@ body {
     margin-top: 250px;
 
     /*animation: fadeIn 0.2s 0.15s ease both;*/
+}
+.card_active .card__short-description-block {
+    display: none;
 }
 
 .card__header {
@@ -172,35 +191,38 @@ body {
     margin-top: 16px;
 }
 
-/*.card_active {*/
-/*    flex-basis: 700px;*/
-/*}*/
+.card_active {
+    /*flex-basis: 700px;*/
+    width: 840px;
+}
 
 
 
 .card__full-description {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 18px;
+    line-height: 24px;
     font-weight: 300;
 
-    padding: 48px 56px;
+    /*padding: 48px 56px;*/
 
-    display: none;
-    /*visibility: hidden;*/
-    /*max-width: 0;*/
-    /*margin-left: 0;*/
+    visibility: hidden;
     /*transition: 0.2s ease both;*/
+
+    /* Обнуление стилей */
+    max-width: 0;
+    margin-left: 0;
+    padding: 48px 0;
 }
 
-/*.card_active .card__full-description {*/
-/*    margin-left: 300px;*/
-/*    max-width: 100%;*/
-/*    visibility: visible;*/
-/*    padding: 30px 40px;*/
+.card_active .card__full-description {
+    margin-left: 360px;
+    max-width: 100%;
+    visibility: visible;
+    padding: 48px 56px;
 
-/*    transition: 0.2s ease;*/
-/*    animation: fadeIn 0.2s 0.1s ease both;*/
-/*}*/
+    /*transition: 0.2s ease;*/
+    /*animation: fadeIn 0.2s 0.1s ease both;*/
+}
 
 /*.card_active .card__section {*/
 /*    animation: fadeIn 0.2s 0.2s ease both;*/
@@ -208,13 +230,13 @@ body {
 
 .card__fullname {
     color: var(--color-primary);
-    font-size: 26px;
+    font-size: 24px;
     line-height: 28px;
     font-weight: bold;
 }
 
 .card__section + .card__section {
-    margin-top: 16px;
+    margin-top: 12px;
 }
 
 .card__subheader {
@@ -236,12 +258,11 @@ body {
     margin: -4px;
     padding-top: 8px;
 }
-
 .card__superpowers li {
     display: inline-block;
 
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 16px;
+    line-height: 18px;
 
     margin: 4px;
 
