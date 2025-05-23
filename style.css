@@ -91,6 +91,8 @@ body {
     height: 150px;
     background: var(--color-secondary);
 
+    transition: filter 0.2s ease;
+
     /*animation: coverOut 0.2s ease both;*/
 }
 .card:hover .card__wrapper:after,
@@ -125,6 +127,8 @@ body {
     top: 75px;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    transition: filter 0.2s ease;
 }
 .card_active .card__image {
     width: 352px;
