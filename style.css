@@ -41,7 +41,7 @@ body {
     gap: 48px;
     padding: 0 80px;
 
-    animation: fadeOut 0.8s 0.3s ease both;
+    animation: CardsFadeOut 0.8s 0.3s ease both;
     /*scroll-snap-type: x mandatory;*/
     /*scrollbar-color: #514327 transparent;*/
 }
@@ -94,6 +94,7 @@ body {
     transition: filter 0.2s ease;
 
     /*animation: coverIn 0.2s ease both;*/
+    /*animation-direction: reverse;*/
 }
 .card:hover .card__wrapper:after,
 .card:hover .card__image {
@@ -142,12 +143,13 @@ body {
     padding: 0 40px;
 
     margin-top: 250px;
+    flex-basis: 400px;
+    flex-shrink: 0;
 
     animation: fadeIn 0.4s 0.5s ease both;
 }
 .card_active .card__short-description-block {
-    /* todo Мешает анимации */
-    display: none;
+    animation: fadeOut 0.3s ease both;
 }
 
 .card__header {
@@ -191,10 +193,12 @@ body {
 }
 
 .card_active .card__full-description {
-    margin-left: 360px;
     max-width: 100%;
     visibility: visible;
     padding: 48px 56px;
+
+    flex-basis: 440px;
+    flex-shrink: 0;
 
     /*transition: 0.2s ease;*/
     /*animation: fadeIn 0.2s 0.1s ease both;*/
@@ -293,6 +297,19 @@ body {
     }
 }
 @keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translate3d(0%, 0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(0, 15%, 0);
+    }
+}
+
+
+@keyframes CardsFadeOut {
     0% {
         opacity: 0;
         transform: translate3d(0%, 15%, 0);
