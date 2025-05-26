@@ -125,19 +125,16 @@ body {
     user-select: none;
 
     position: absolute;
-    top: 75px;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
-    transition: filter 0.2s ease;
+    top: -103px;
+    left: 60px;
+    transform: translate(0, 0);
+
+    transition: filter 0.2s ease,
+                transform 0.5s ease 0.32s;
 }
 .card_active .card__image {
-    width: 352px;
-    height: 448px;
-
-    top: 50%;
-    left: 4px;
-    transform: translate(0, -50%);
+    transform: translate(-20px, 160px) scale(1.25714);
 }
 
 .card__short-description-block {
@@ -338,7 +335,7 @@ body {
 
     /* анимируем движение уже слева направо */
     100% {
-        width: 300px;
+        width: 360px;
         height: 100%;
     }
 }
