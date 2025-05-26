@@ -93,7 +93,7 @@ body {
 
     transition: filter 0.2s ease;
 
-    /*animation: coverOut 0.2s ease both;*/
+    /*animation: coverIn 0.2s ease both;*/
 }
 .card:hover .card__wrapper:after,
 .card:hover .card__image {
@@ -110,7 +110,8 @@ body {
     height: 100%;
     width: 360px;
 
-    /*animation: coverIn 0.2s ease both;*/
+    /* Анимация исчезания подложки */
+    animation: coverOut 0.8s ease both;
 }
 
 .card__image {
@@ -169,7 +170,9 @@ body {
 }
 
 .card_active {
-    width: 840px;
+    /*width: 840px;*/ /* перенесли в анимацию */
+    /* Анимация расширения карточки */
+    animation: cardWideIn 0.5s ease both 0.32s; /* задержка 40% от 0.8 = 0.32s */
 }
 
 
@@ -266,6 +269,17 @@ body {
 /*    }*/
 /*}*/
 
+/* Анимация расширения карточки */
+@keyframes cardWideIn {
+    0% {
+        width: 400px;
+    }
+
+    100% {
+        width: 840px;
+    }
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -295,40 +309,57 @@ body {
     }
 }
 
-@keyframes coverIn {
+/* Анимация исчезания подложки сверху */
+@keyframes coverOut {
     0% {
         width: 100%;
         height: 150px;
     }
-
     40% {
-        width: 350px;
+        width: 100%;
         height: 0;
     }
 
+    /* Незаметно перемещаем её вбок */
+
+    /* для этого прячем */
+    40.1% {
+        opacity: 0;
+    }
+    /* перемещаем */
+    40.2% {
+        width: 0;
+        height: 100%;
+    }
+    /* а потом показываем */
+    40.3% {
+        opacity: 1;
+    }
+
+    /* анимируем движение уже слева направо */
     100% {
         width: 300px;
         height: 100%;
     }
 }
 
-@keyframes coverOut {
+/*@keyframes coverIn {*/
 
-    0% {
-        width: 300px;
-        height: 100%;
-    }
+/*    0% {*/
+/*        width: 300px;*/
+/*        height: 100%;*/
+/*    }*/
 
-    50% {
-        width: 350px;
-        height: 100%;
-    }
+/*    50% {*/
+/*        width: 350px;*/
+/*        height: 100%;*/
+/*    }*/
 
-    100% {
-        width: 100%;
-        height: 150px;
-    }
-}
+/*    100% {*/
+/*        width: 100%;*/
+/*        height: 150px;*/
+/*    }*/
+/*}*/
 
 .storm {
     --color-primary: #513E30;
