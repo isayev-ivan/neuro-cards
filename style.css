@@ -59,7 +59,13 @@ body {
     height: 470px;
 
     cursor: pointer;
-    transition: width 0.2s ease;
+    /* Анимация расширения карточки */
+    transition: width 0.5s ease;
+}
+.card_active {
+    width: 840px;
+    /* Анимация расширения карточки */
+    transition-delay: 0.32s; /* задержка 40% от 0.8 = 0.32s */
 }
 
 .card__wrapper {
@@ -92,10 +98,15 @@ body {
     background: var(--color-secondary);
 
     transition: filter 0.2s ease;
-
-    /*animation: coverIn 0.2s ease both;*/
-    /*animation-direction: reverse;*/
+    animation: coverIn 0.8s ease;
 }
+.card_active .card__wrapper:after {
+    width: 360px;
+    height: 100%;
+    /* Анимация исчезания подложки */
+    animation: coverOut 0.8s ease;
+}
+
 .card:hover .card__wrapper:after,
 .card:hover .card__image {
     filter: brightness(98%) contrast(0.98);
@@ -104,16 +115,7 @@ body {
 .card:active .card__image {
     filter: brightness(95%) contrast(0.98);
 }
-.card_active .card__wrapper:after {
-    /*top: 0;*/
-    /*left: 0;*/
 
-    height: 100%;
-    width: 360px;
-
-    /* Анимация исчезания подложки */
-    animation: coverOut 0.8s ease both;
-}
 
 .card__image {
     width: 280px;
@@ -132,10 +134,11 @@ body {
     transform: translate(0, 0);
 
     transition: filter 0.2s ease,
-                transform 0.5s ease 0.32s;
+                transform 0.5s ease;
 }
 .card_active .card__image {
     transform: translate(-20px, 160px) scale(1.25714);
+    transition-delay: 0s, 0.32s;
 }
 
 .card__short-description-block {
@@ -155,7 +158,7 @@ body {
 .card__header {
     color: var(--color-primary);
     font-size: 40px;
-    line-height: 48px; /* !! todo почему не другие единицы, ответить !! */
+    line-height: 48px; /* todo почему не другие единицы, ответить */
 }
 
 .card__description {
@@ -168,12 +171,6 @@ body {
     margin-top: 16px;
 }
 
-.card_active {
-    /*width: 840px;*/ /* перенесли в анимацию */
-    /* Анимация расширения карточки */
-    animation: cardWideIn 0.5s ease both 0.32s; /* задержка 40% от 0.8 = 0.32s */
-}
-
 
 
 .card__full-description {
@@ -181,14 +178,10 @@ body {
     line-height: 24px;
     font-weight: 300;
 
-    /*padding: 48px 56px;*/
-
     visibility: hidden;
-    /*transition: 0.2s ease both;*/
 
     /* Обнуление стилей */
     max-width: 0;
-    margin-left: 0;
     padding: 48px 0;
 }
 
@@ -199,14 +192,8 @@ body {
 
     flex-basis: 440px;
     flex-shrink: 0;
-
-    /*transition: 0.2s ease;*/
-    /*animation: fadeIn 0.2s 0.1s ease both;*/
 }
 
-/*.card_active .card__section {*/
-/*    animation: fadeIn 0.2s 0.2s ease both;*/
-/*}*/
 
 .card__fullname {
     color: var(--color-primary);
@@ -253,22 +240,6 @@ body {
     white-space: nowrap;
 }
 
-
-/*@keyframes fadeInLeft {*/
-/*    0% {*/
-/*        opacity: 0;*/
-/*        transform: translate3d(50%, -20%, 0);*/
-/*    }*/
-
-/*    25% {*/
-/*        opacity: 0.35;*/
-/*    }*/
-
-/*    100% {*/
-/*        opacity: 1;*/
-/*        transform: translateZ(0);*/
-/*    }*/
-/*}*/
 
 /* Анимация расширения карточки */
 @keyframes cardWideIn {
@@ -357,23 +328,39 @@ body {
     }
 }
 
-/*@keyframes coverIn {*/
+@keyframes coverIn {
+    0% {
+        width: 360px;
+        height: 100%;
+    }
 
-/*    0% {*/
-/*        width: 300px;*/
-/*        height: 100%;*/
-/*    }*/
+    40% {
+        width: 0;
+        height: 100%;
+    }
 
-/*    50% {*/
-/*        width: 350px;*/
-/*        height: 100%;*/
-/*    }*/
+    /* Незаметно перемещаем её вверх */
 
-/*    100% {*/
-/*        width: 100%;*/
-/*        height: 150px;*/
-/*    }*/
-/*}*/
+    /* для этого прячем */
+    40.1% {
+        opacity: 0;
+    }
+    /* перемещаем */
+    40.2% {
+        width: 100%;
+        height: 0;
+    }
+    /* а потом показываем */
+    40.3% {
+        opacity: 1;
+    }
+
+    /* продолжаем анимацию */
+    100% {
+        width: 100%;
+        height: 150px;
+    }
+}
 
 .storm {
     --color-primary: #513E30;
