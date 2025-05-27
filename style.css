@@ -178,23 +178,27 @@ body {
     line-height: 24px;
     font-weight: 300;
 
-    visibility: hidden;
-    /*transition: max-width 0s ease 3s, visibility 0s ease 3s;*/
-    /* todo посмотреть что с отступами, общей шириной
-         visibility, display max-width, flex-basic */
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    /* Обнуление стилей */
-    max-width: 0;
-    padding: 48px 0;
+    width: 480px;
+    padding: 48px 56px;
+
+    margin-left: 360px;
+
+    visibility: hidden;
+
+    /* по факту — скрыть, но с задержкой,
+    будет применяться в ситуации ← active */
+    transition: visibility 0s;
+    transition-delay: 0.5s;
 }
 
 .card_active .card__full-description {
-    max-width: 100%;
     visibility: visible;
-    padding: 48px 56px;
-
-    flex-basis: 440px;
-    flex-shrink: 0;
+    /* отменяем задержку при → active */
+    transition-delay: 0s;
 }
 
 
@@ -242,7 +246,6 @@ body {
     color: var(--color-primary);
     white-space: nowrap;
 }
-
 
 /* Анимация расширения карточки */
 @keyframes cardWideIn {
@@ -345,16 +348,16 @@ body {
     /* Незаметно перемещаем её вверх */
 
     /* для этого прячем */
-    40.1% {
+    50.1% {
         opacity: 0;
     }
     /* перемещаем */
-    40.2% {
+    50.2% {
         width: 100%;
         height: 0;
     }
     /* а потом показываем */
-    40.3% {
+    50.3% {
         opacity: 1;
     }
 
