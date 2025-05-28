@@ -63,7 +63,7 @@ body {
 
 .card__wrapper {
     border-radius: 20px;
-    background: white;
+    background: var(--color-card-bg);
     color: var(--color-text);
     overflow: hidden;
 
@@ -385,7 +385,53 @@ body {
     --color-secondary: #f3ede2;
 }
 
+
+@media only screen and (max-width: 1000px) {
+    /* Стили для мобилки — desktop-first */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #222;
+        --color-secondary: #dadada;
+
+        --color-text: rgba(255, 255, 255, 0.85);
+        --color-bg: #222;
+        --color-card-bg: #333231;
+    }
+
+    .card__wrapper {
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .05);
+    }
+
+    .storm {
+        --color-primary: #bda28f;
+        --color-secondary: #5b5752;
+    }
+    .shadow {
+        --color-primary: #95a079;
+        --color-secondary: #4f4e48;
+    }
+    .fox {
+        --color-primary: #c68968;
+        --color-secondary: #4d4942;
+    }
+    .phoenix {
+        --color-primary: #d79489;
+        --color-secondary: #514843;
+    }
+    .omega {
+        --color-primary: #c9826e;
+        --color-secondary: #4e463e;
+    }
+    .shearwater {
+        --color-primary: #caa391;
+        --color-secondary: #57544f;
+    }
+}
+
 /*
   todo задания
+  - Медиа куэри?
   - Сделать тёмную тему
 */
