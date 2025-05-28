@@ -23,7 +23,6 @@ body {
     align-items: center; /* выравнивание по вертикали */
 
     /* обнуляем отступы */
-    /* todo рассказать про reset и normalize */
     margin: 0;
     padding: 120px 0;
 
@@ -37,19 +36,13 @@ body {
 
 .cards-list {
     display: flex;
+
     flex-wrap: nowrap;
     gap: 48px;
     padding: 0 80px;
 
     animation: CardsFadeOut 0.8s 0.3s ease both;
-    /*scroll-snap-type: x mandatory;*/
-    /*scrollbar-color: #514327 transparent;*/
 }
-
-/*.cards-list > * {*/
-/*    scroll-snap-align: center;*/
-/*    scroll-margin-left: 100px;*/
-/*}*/
 
 .card {
     position: relative;
@@ -85,7 +78,6 @@ body {
     0 80px 48px 0 rgba(0, 0, 0, 0.1);
 
     display: flex;
-    /*transition: 0.2s ease;*/
 }
 .card__wrapper:after {
     content: "";
@@ -158,7 +150,7 @@ body {
 .card__header {
     color: var(--color-primary);
     font-size: 40px;
-    line-height: 48px; /* todo почему не другие единицы, ответить */
+    line-height: 48px;
 }
 
 .card__description {
@@ -396,5 +388,4 @@ body {
 /*
   todo задания
   - Сделать тёмную тему
-  - Реализовать другую версию макетов
 */

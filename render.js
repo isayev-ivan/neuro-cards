@@ -79,10 +79,12 @@ function onload() {
 
     document.querySelectorAll("[data-card]").forEach((x) => {
         x.addEventListener("click", () => {
+            if (!x.classList.contains("card_active")) {
+                setTimeout(() => {
+                    x.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                }, 800);
+            }
             x.classList.toggle("card_active");
-            // setTimeout(() => {
-            //     x.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-            // }, 250);
         });
     });
 }
