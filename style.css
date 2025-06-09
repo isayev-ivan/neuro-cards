@@ -386,10 +386,6 @@ body {
 }
 
 
-@media only screen and (max-width: 1000px) {
-    /* Стили для мобилки — desktop-first */
-}
-
 @media (prefers-color-scheme: dark) {
     :root {
         --color-primary: #222;
@@ -430,8 +426,67 @@ body {
     }
 }
 
-/*
-  todo задания
-  - Медиа куэри?
-  - Сделать тёмную тему
-*/
+
+@media (width < 1000px) {
+    /* todo Стили для мобилки — desktop-first */
+
+    /* отключаем анимации */
+    *, *:before, *:after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .cards-list {
+        flex-direction: column;
+        gap: 110px;
+        padding: 0 20px;
+    }
+    /*.cards-list:has(.card_active) {*/
+    /*    display: contents;*/
+    /*}*/
+
+
+
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+    .card__short-description-block {
+        flex-basis: fit-content;
+        padding: 0 30px;
+    }
+    .card__image {
+        width: 240px;
+        height: 305px;
+        top: -60px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+
+    /*.card-list-wrapper:has(.card_active) {*/
+    /*    overflow: hidden;*/
+    /*}*/
+
+
+
+    /*.card_active {*/
+    /*    position: absolute;*/
+    /*    z-index: 1;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    width: 100%;*/
+    /*    height: 100%;*/
+    /*}*/
+}
+
+@media (width < 400px) {
+    .card__header {
+        font-size: 40px;
+        line-height: 48px;
+    }
+    .card__description {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
