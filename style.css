@@ -427,7 +427,7 @@ body {
 }
 
 
-@media (width < 1000px) {
+@media (width < 850px) {
     /* todo Стили для мобилки — desktop-first */
 
     /* отключаем анимации */
@@ -441,11 +441,6 @@ body {
         gap: 110px;
         padding: 0 20px;
     }
-    /*.cards-list:has(.card_active) {*/
-    /*    display: contents;*/
-    /*}*/
-
-
 
     .card {
         width: 100%;
@@ -463,21 +458,43 @@ body {
         transform: translate(-50%, 0);
     }
 
+    body:has(.card_active) {
+        overflow: hidden;
+    }
 
-    /*.card-list-wrapper:has(.card_active) {*/
-    /*    overflow: hidden;*/
-    /*}*/
+    .card_active {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        overflow: auto;
+    }
 
+    .card_active .card__wrapper {
+        border-radius: 0;
+        height: auto;
+        min-height: 100%;
+    }
+    .card_active .card__image {
+        transform: translate(-50%, 90px) scale(1.2);
+    }
 
-
-    /*.card_active {*/
-    /*    position: absolute;*/
-    /*    z-index: 1;*/
-    /*    top: 0;*/
-    /*    left: 0;*/
-    /*    width: 100%;*/
-    /*    height: 100%;*/
-    /*}*/
+    .card_active .card__short-description-block {
+        display: none;
+    }
+    .card_active .card__full-description {
+        position: relative;
+        margin: 0 auto;
+        z-index: 1;
+        padding: 370px 32px 32px;
+    }
+    .card_active .card__wrapper:after {
+        width: 100%;
+        height: 100px;
+    }
 }
 
 @media (width < 400px) {
